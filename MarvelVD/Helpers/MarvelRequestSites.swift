@@ -18,7 +18,7 @@ enum MarvelRequestSites: String {
     case stories
     
     private func getUrl() -> String {
-        return domainUrl + self.rawValue + "?"
+        return domainUrl + self.rawValue + "?limit=50"
     }
     
     func getUrlForSearch(_ startWith: String? = nil) -> String {
@@ -26,9 +26,9 @@ enum MarvelRequestSites: String {
         if let startWithCharacters = startWith {
             switch self {
             case .characters, .creators,.events:
-                baseUrl += "nameStartsWith=\(startWithCharacters)"
+                baseUrl += "&nameStartsWith=\(startWithCharacters)"
             case .comics, .series:
-                baseUrl += "titleStartsWith=\(startWithCharacters)"
+                baseUrl += "&titleStartsWith=\(startWithCharacters)"
             default:
                 print("Without title")
             }

@@ -29,12 +29,12 @@ class MarvelRequestSitesTest: XCTestCase {
         let seriesURL = MarvelRequestSites.series.getUrlForSearch()
         let storiesURL = MarvelRequestSites.stories.getUrlForSearch()
         
-        XCTAssertEqual(charactersURL, "https://gateway.marvel.com:443/v1/public/characters?")
-        XCTAssertEqual(comicsURL, "https://gateway.marvel.com:443/v1/public/comics?")
-        XCTAssertEqual(creatorsURL, "https://gateway.marvel.com:443/v1/public/creators?")
-        XCTAssertEqual(eventsURL, "https://gateway.marvel.com:443/v1/public/events?")
-        XCTAssertEqual(seriesURL, "https://gateway.marvel.com:443/v1/public/series?")
-        XCTAssertEqual(storiesURL, "https://gateway.marvel.com:443/v1/public/stories?")
+        XCTAssertEqual(charactersURL, "https://gateway.marvel.com:443/v1/public/characters?limit=50")
+        XCTAssertEqual(comicsURL, "https://gateway.marvel.com:443/v1/public/comics?limit=50")
+        XCTAssertEqual(creatorsURL, "https://gateway.marvel.com:443/v1/public/creators?limit=50")
+        XCTAssertEqual(eventsURL, "https://gateway.marvel.com:443/v1/public/events?limit=50")
+        XCTAssertEqual(seriesURL, "https://gateway.marvel.com:443/v1/public/series?limit=50")
+        XCTAssertEqual(storiesURL, "https://gateway.marvel.com:443/v1/public/stories?limit=50")
     }
     
     func testMarvelVD_getURLWithSearch() {
@@ -45,12 +45,12 @@ class MarvelRequestSitesTest: XCTestCase {
         let seriesURL = MarvelRequestSites.series.getUrlForSearch("Witch")
         let storiesURL = MarvelRequestSites.stories.getUrlForSearch("ew York City")
         
-        XCTAssertEqual(charactersURL, "https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=spider")
-        XCTAssertEqual(comicsURL, "https://gateway.marvel.com:443/v1/public/comics?titleStartsWith=batm")
-        XCTAssertEqual(creatorsURL, "https://gateway.marvel.com:443/v1/public/creators?nameStartsWith=aco")
-        XCTAssertEqual(eventsURL, "https://gateway.marvel.com:443/v1/public/events?nameStartsWith=All-New")
-        XCTAssertEqual(seriesURL, "https://gateway.marvel.com:443/v1/public/series?titleStartsWith=Witch")
-        XCTAssertEqual(storiesURL, "https://gateway.marvel.com:443/v1/public/stories?")
+        XCTAssertEqual(charactersURL, "https://gateway.marvel.com:443/v1/public/characters?limit=50&nameStartsWith=spider")
+        XCTAssertEqual(comicsURL, "https://gateway.marvel.com:443/v1/public/comics?limit=50&titleStartsWith=batm")
+        XCTAssertEqual(creatorsURL, "https://gateway.marvel.com:443/v1/public/creators?limit=50&nameStartsWith=aco")
+        XCTAssertEqual(eventsURL, "https://gateway.marvel.com:443/v1/public/events?limit=50&nameStartsWith=All-New")
+        XCTAssertEqual(seriesURL, "https://gateway.marvel.com:443/v1/public/series?limit=50&titleStartsWith=Witch")
+        XCTAssertEqual(storiesURL, "https://gateway.marvel.com:443/v1/public/stories?limit=50")
         
     }
 }

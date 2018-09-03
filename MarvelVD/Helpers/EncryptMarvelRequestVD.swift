@@ -12,7 +12,7 @@ import CryptoSwift
 final class EncryptMarvelRequestVD {
     
     func encryptForRequestData(_ url: String, _ date: Date) -> URL {
-        return URL(string: "\(url)ts=\(date.timestamp)&apiKey=\(publicKey)&hash=\(makeHash(date.timestamp))")!
+        return URL(string: "\(url)ts=\(date.timestamp)&apikey=\(publicKey)&hash=\(makeHash(date.timestamp))")!
     }
     
     private func makeHash(_ timestamp: UInt64) -> String{

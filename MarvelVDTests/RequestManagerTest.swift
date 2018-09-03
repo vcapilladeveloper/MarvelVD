@@ -29,11 +29,8 @@ class RequestManagerTest: XCTestCase {
     }
     
     func test_get_request_withIncorectURL() {
-        guard let url = URL(string: "http://www.google./") else {
-            fatalError("URL can't be empty")
-        }
         let expectation: XCTestExpectation = self.expectation(description: "GET DATA")
-        RequestManager.getResult(url) { (data, error) in
+        RequestManager.getResult("http://www.google./") { (data, error) in
             if !error {
                 XCTAssertNotNil(data)
                 expectation.fulfill()
@@ -50,11 +47,9 @@ class RequestManagerTest: XCTestCase {
     }
     
     func test_get_request_URLWithoutInfo() {
-        guard let url = URL(string: "http://gateway.marvel.com/") else {
-            fatalError("URL can't be empty")
-        }
+        
         let expectation: XCTestExpectation = self.expectation(description: "GET DATA")
-        RequestManager.getResult(url) { (data, error) in
+        RequestManager.getResult("http://gateway.marvel.com/") { (data, error) in
             if !error {
                 XCTAssertNotNil(data)
                 expectation.fulfill()

@@ -1,5 +1,5 @@
 //
-//  BaseModel.swift
+//  MarvelComic.swift
 //  MarvelVD
 //
 //  Created by Victor Capilla Developer on 3/9/18.
@@ -8,10 +8,8 @@
 
 import Foundation
 
-struct BaseModel<T: Codable>: Codable {
-    let data: T
-}
-
-struct ResultModel<T: Codable>: Codable {
-    let results: T
+struct MarvelComic: Codable {
+    let id: Int
+    let title, variantDescription, description: String
+    let thumbnail: Thumbnail
 }

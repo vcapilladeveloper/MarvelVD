@@ -19,6 +19,7 @@ final class RequestManager: NSObject {
         dataGetTask?.cancel()
         defaultSession = URLSession(configuration: .default)
         var urlRequest = URLRequest(url: encryptUrl)
+        print(encryptUrl.absoluteString)
         urlRequest.httpMethod = "GET"
         dataGetTask = defaultSession.dataTask(with: urlRequest) { data, response, error in
             if let response = response as? HTTPURLResponse { print(response.statusCode) }

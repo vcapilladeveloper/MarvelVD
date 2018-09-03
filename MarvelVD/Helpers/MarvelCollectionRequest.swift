@@ -12,10 +12,15 @@ final class MarvelCollectionRequest {
     
     func getCharacters() {
         RequestManager.getResult(MarvelRequestSites.characters.getUrlForSearch()) { (data, error) in
-            if error != nil {
+            if error {
                 print("Error Requesting Data")
             } else {
-                let data: ResultModel = ModelCodableEngineVD().genericConvert(data as! Data)
+                if let characters: BaseModel<ResultModel<[MarvelCharacter]>> = ModelCodableEngineVD().genericConvert(data as! Data) {
+                    for char in characters.data.results {
+                        print("Name: ", char.name)
+                        print("Description: ", char.description)
+                    }
+                }
             }
         }
     }

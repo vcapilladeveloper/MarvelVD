@@ -27,6 +27,9 @@
 		672DCC39213DB75600F2E3F7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC38213DB75600F2E3F7 /* BaseModel.swift */; };
 		672DCC3B213DBA5000F2E3F7 /* ModelCodableEngineVD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC3A213DBA5000F2E3F7 /* ModelCodableEngineVD.swift */; };
 		672DCC3D213DBBE700F2E3F7 /* MarvelCollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC3C213DBBE700F2E3F7 /* MarvelCollectionRequest.swift */; };
+		672DCC3F213DD34400F2E3F7 /* MarvelCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC3E213DD34400F2E3F7 /* MarvelCharacter.swift */; };
+		672DCC41213DDAFB00F2E3F7 /* ModelsVDTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC40213DDAFB00F2E3F7 /* ModelsVDTest.swift */; };
+		672DCC43213DE45100F2E3F7 /* MarvelComic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC42213DE45100F2E3F7 /* MarvelComic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		672DCC38213DB75600F2E3F7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		672DCC3A213DBA5000F2E3F7 /* ModelCodableEngineVD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCodableEngineVD.swift; sourceTree = "<group>"; };
 		672DCC3C213DBBE700F2E3F7 /* MarvelCollectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCollectionRequest.swift; sourceTree = "<group>"; };
+		672DCC3E213DD34400F2E3F7 /* MarvelCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelCharacter.swift; sourceTree = "<group>"; };
+		672DCC40213DDAFB00F2E3F7 /* ModelsVDTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsVDTest.swift; sourceTree = "<group>"; };
+		672DCC42213DE45100F2E3F7 /* MarvelComic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelComic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 				672DCC23213DA6D300F2E3F7 /* RequestManagerTest.swift */,
 				672DCC29213DAB1D00F2E3F7 /* MarvelRequestSitesTest.swift */,
 				672DCC34213DB3AC00F2E3F7 /* EncryptMarvelRequestVDTest.swift */,
+				672DCC40213DDAFB00F2E3F7 /* ModelsVDTest.swift */,
 			);
 			path = MarvelVDTests;
 			sourceTree = "<group>";
@@ -197,6 +204,8 @@
 			children = (
 				672DCC38213DB75600F2E3F7 /* BaseModel.swift */,
 				672DCC3A213DBA5000F2E3F7 /* ModelCodableEngineVD.swift */,
+				672DCC3E213DD34400F2E3F7 /* MarvelCharacter.swift */,
+				672DCC42213DE45100F2E3F7 /* MarvelComic.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -353,6 +362,7 @@
 			files = (
 				672DCC26213DA74100F2E3F7 /* MarvelVDData.swift in Sources */,
 				672DCC22213DA69200F2E3F7 /* RequestManager.swift in Sources */,
+				672DCC43213DE45100F2E3F7 /* MarvelComic.swift in Sources */,
 				672DCC28213DA7F100F2E3F7 /* MarvelRequestSites.swift in Sources */,
 				672DCC3B213DBA5000F2E3F7 /* ModelCodableEngineVD.swift in Sources */,
 				672DCBF5213DA62D00F2E3F7 /* ViewController.swift in Sources */,
@@ -360,6 +370,7 @@
 				672DCC3D213DBBE700F2E3F7 /* MarvelCollectionRequest.swift in Sources */,
 				672DCBF3213DA62D00F2E3F7 /* AppDelegate.swift in Sources */,
 				672DCC39213DB75600F2E3F7 /* BaseModel.swift in Sources */,
+				672DCC3F213DD34400F2E3F7 /* MarvelCharacter.swift in Sources */,
 				672DCC33213DB2A400F2E3F7 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				672DCC41213DDAFB00F2E3F7 /* ModelsVDTest.swift in Sources */,
 				672DCC35213DB3AC00F2E3F7 /* EncryptMarvelRequestVDTest.swift in Sources */,
 				672DCC08213DA62E00F2E3F7 /* MarvelVDTests.swift in Sources */,
 				672DCC2A213DAB1D00F2E3F7 /* MarvelRequestSitesTest.swift in Sources */,
