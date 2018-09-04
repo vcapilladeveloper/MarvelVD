@@ -14,18 +14,8 @@ struct MarvelCharacter: Codable {
     let thumbnail: Thumbnail
 }
 
-
-struct Thumbnail: Codable {
-    let path: String
-    let thumbnailExtension: Extension
-    
-    enum CodingKeys: String, CodingKey {
-        case path
-        case thumbnailExtension = "extension"
+extension MarvelCharacter: MarvelItemData {
+    func returnMarvelItem() -> MarvelItem {
+        return MarvelItem(id: id, title: name, description: description, imageUrl: thumbnail.returnUrl())
     }
-}
-
-enum Extension: String, Codable {
-    case gif = "gif"
-    case jpg = "jpg"
 }

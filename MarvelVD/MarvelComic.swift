@@ -10,6 +10,13 @@ import Foundation
 
 struct MarvelComic: Codable {
     let id: Int
-    let title, variantDescription, description: String
+    let title, variantDescription: String
+    let description: String?
     let thumbnail: Thumbnail
+}
+
+extension MarvelComic: MarvelItemData {
+    func returnMarvelItem() -> MarvelItem {
+        return MarvelItem(id: id, title: title, description: description != nil ? description! : variantDescription, imageUrl: thumbnail.returnUrl())
+    }
 }
