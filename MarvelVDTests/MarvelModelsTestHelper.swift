@@ -11,10 +11,10 @@ import Foundation
 
 final class MarvelModelsTestHelper {
     
-    private let comicsOK = "{\"data\":{\"results\": [{\"id\": 183,\"title\": \"Startling Stories: The Incorrigible Hulk (2004) #1\", \"variantDescription\": \"\",\"description\": \"For Doctor Bruce Banner l\", \"thumbnail\": {\"path\": \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available\",\"extension\": \"jpg\"}}]}}"
-    
     private let charactersOK = "{\"data\":{\"results\": [{\"id\": 1011334, \"name\": \"3-D Man\", \"description\": \"\", \"thumbnail\": { \"path\": \"http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784\", \"extension\": \"jpg\"}}]}}"
     
+    private let comicsOK = "{\"data\":{\"results\": [{\"id\": 183,\"title\": \"Startling Stories: The Incorrigible Hulk (2004) #1\", \"variantDescription\": \"\",\"description\": \"For Doctor Bruce Banner l\", \"thumbnail\": {\"path\": \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available\",\"extension\": \"jpg\"}}]}}"
+
     private let creatorsOK = "{\"data\": {\"results\": [{\"id\": 7968,\"firstName\": \"\",\"middleName\": \"\", \"lastName\": \"\", \"fullName\": \"\", \"thumbnail\": { \"path\": \"http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available\", \"extension\": \"jpg\" }}]}}"
     
     private let eventsOK = "{\"data\": {\"results\": [{\"id\": 116,\"title\": \"Acts of Vengeance!\", \"description\": \"Loki sets about convincing the super-villains of Earth to attack heroes other than those they normally fight in an attempt to destroy the Avengers to absolve his guilt over inadvertently creating the team in the first place.\", \"thumbnail\": { \"path\": \"http://i.annihil.us/u/prod/marvel/i/mg/9/40/51ca10d996b8b\", \"extension\": \"jpg\"}}]}}"

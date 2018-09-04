@@ -13,7 +13,7 @@ struct Thumbnail: Codable {
     let thumbnailExtension: Extension
     
     func returnUrl() -> URL {
-        if let url = URL(string: path + thumbnailExtension.rawValue) {
+        if let url = URL(string: path + "." + thumbnailExtension.rawValue) {
             return url
         } else {
             return URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!
