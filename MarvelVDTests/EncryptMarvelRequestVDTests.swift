@@ -1,5 +1,5 @@
 //
-//  EncryptMarvelRequestVDTest.swift
+//  EncryptMarvelRequestVDTests.swift
 //  MarvelVDTests
 //
 //  Created by Victor Capilla Developer on 3/9/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import MarvelVD
 
-class EncryptMarvelRequestVDTest: XCTestCase {
+class EncryptMarvelRequestVDTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

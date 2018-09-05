@@ -1,5 +1,5 @@
 //
-//  RequestManagerTest.swift
+//  RequestManagerTests.swift
 //  MarvelVDTests
 //
 //  Created by Victor Capilla Developer on 3/9/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import MarvelVD
 
-class RequestManagerTest: XCTestCase {
+class RequestManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -1,5 +1,5 @@
 //
-//  MarvelRequestSitesTest.swift
+//  MarvelRequestSitesTests.swift
 //  MarvelVDTests
 //
 //  Created by Victor Capilla Developer on 3/9/18.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import MarvelVD
 
-class MarvelRequestSitesTest: XCTestCase {
+class MarvelRequestSitesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
