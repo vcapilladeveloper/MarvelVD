@@ -186,6 +186,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="TuD-Cy-2gB" secondAttribute="trailing" constant="8" id="lK7-Yp-daq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="idLabel" destination="rHQ-hQ-hld" id="nLy-Cf-I6n"/>
+                                            <outlet property="imageItem" destination="1Bo-Qm-An4" id="iKV-jh-dMK"/>
+                                            <outlet property="titleLabel" destination="gvk-Vl-DRe" id="KQm-xC-RbY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

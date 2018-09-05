@@ -21,12 +21,15 @@ extension MarvelItemListDataProvider: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return marvelItemsManager?.marvelItems.count ?? 0
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! MarvelItemCell
+
+        cell.configCellWithItem((marvelItemsManager?.marvelItems[indexPath.row])!)
+        
         return cell
     }
 }

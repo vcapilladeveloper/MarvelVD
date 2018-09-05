@@ -12,7 +12,27 @@ protocol MarvelItemData {
     func returnMarvelItem()->MarvelItem
 }
 
-struct MarvelItem {
+struct MarvelItem: Equatable {
+    
+    static func == (lhs: MarvelItem, rhs: MarvelItem ) -> Bool {
+        if lhs.id != rhs.id {
+            return false
+        }
+        
+        if lhs.description != rhs.description {
+            return false
+        }
+        
+        if lhs.title != rhs.title {
+            return false
+        }
+        
+        if lhs.imageUrl.absoluteString != rhs.imageUrl.absoluteString {
+            return false
+        }
+        return true
+    }
+    
     let id: Int
     let title, description: String
     let imageUrl: URL

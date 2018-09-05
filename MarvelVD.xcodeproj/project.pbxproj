@@ -176,12 +176,12 @@
 		672DCBF1213DA62D00F2E3F7 /* MarvelVD */ = {
 			isa = PBXGroup;
 			children = (
+				672DCC20213DA65F00F2E3F7 /* Support Files */,
 				672DCC37213DB67F00F2E3F7 /* Models */,
 				672DCC36213DB66200F2E3F7 /* Helpers */,
 				672DCBF4213DA62D00F2E3F7 /* MainViewController.swift */,
 				88AAA2B2213FCC7300B6BBC5 /* MarvelTableViewController.swift */,
 				672DCBF6213DA62D00F2E3F7 /* Main.storyboard */,
-				672DCC20213DA65F00F2E3F7 /* Support Files */,
 				88AAA2B4213FCD8B00B6BBC5 /* MarvelItemListDataProvider.swift */,
 				88AAA2B6213FCE8A00B6BBC5 /* MarvelItemCell.swift */,
 			);
