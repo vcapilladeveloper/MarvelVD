@@ -17,6 +17,10 @@ final class MarvelItemManager {
         marvelItems.append(item)
     }
     
+    func addItems(_ items: [MarvelItem]) {
+        marvelItems = items
+    }
+    
     func itemAtIndex(_ index: Int) -> MarvelItem {
         return marvelItems[index]
     }

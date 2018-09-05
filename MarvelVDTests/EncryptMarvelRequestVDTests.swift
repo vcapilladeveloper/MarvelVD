@@ -28,7 +28,7 @@ class EncryptMarvelRequestVDTests: XCTestCase {
         
         let encryptURL = EncryptMarvelRequestVD().encryptForRequestData("https://gateway.marvel.com:433/v1/public/", dataDate!)
         
-        XCTAssertEqual(encryptURL.absoluteString, "https://gateway.marvel.com:433/v1/public/ts=626018515940000000&apikey=9b517862812797cfee46ad75914c87f4&hash=e00929dfbf37fe536071841510a02a46")
+        XCTAssertEqual(encryptURL.absoluteString, "https://gateway.marvel.com:433/v1/public/&ts=626018515940000000&apikey=9b517862812797cfee46ad75914c87f4&hash=e00929dfbf37fe536071841510a02a46")
     }
     
 }

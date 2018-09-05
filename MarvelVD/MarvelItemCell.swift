@@ -17,9 +17,13 @@ class MarvelItemCell: UITableViewCell {
     
     
     func configCellWithItem(_ item: MarvelItem) {
-//        idLabel.text = "\(item.id)"
-//        titleLabel.text = item.title
-//        imageItem.setURL(url: item.imageUrl, placeholderImage: #imageLiteral(resourceName: "emptyImage_3x"))
+        idLabel.text = "\(item.id)"
+        if item.title.isEmpty {
+            titleLabel.text = "No Title"
+        } else {
+            titleLabel.text = item.title
+        }
+        imageItem.setURL(url: NSURL(string: item.imageUrl.absoluteString), placeholderImage: #imageLiteral(resourceName: "emptyImage_3x"))
     }
     
 }

@@ -13,7 +13,11 @@ final class MarvelItemListDataProvider: NSObject {
     var marvelItemsManager: MarvelItemManager?
 }
 
-extension MarvelItemListDataProvider: UITableViewDataSource {
+extension MarvelItemListDataProvider: UITableViewDataSource, UITableViewDelegate {
+    
+    func addItemsToList(_ items: [MarvelItem]) {
+        marvelItemsManager?.addItems(items)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,5 +35,14 @@ extension MarvelItemListDataProvider: UITableViewDataSource {
         cell.configCellWithItem((marvelItemsManager?.marvelItems[indexPath.row])!)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let item = marvelItemsManager?.itemAtIndex(indexPath.row) {
+        NotificationCenter.default.post(
+            name: NSNotification.Name("MarvelItemSelectedNotification"),
+            object: self,
+            userInfo: ["index": item])
+        }
     }
 }

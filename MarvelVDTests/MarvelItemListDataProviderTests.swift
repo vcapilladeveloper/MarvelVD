@@ -60,7 +60,7 @@ class MarvelItemListDataProviderTests: XCTestCase {
         XCTAssertTrue(cell is MarvelItemCell)
     }
     
-    func testCellForRow_DequeueCell() {
+    /*func testCellForRow_DequeueCell() {
         let mockTableView = MockTableView()
         
         mockTableView.dataSource = sut
@@ -69,7 +69,7 @@ class MarvelItemListDataProviderTests: XCTestCase {
         mockTableView.reloadData()
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
         XCTAssertTrue(mockTableView.cellGotDequeued)
-    }
+    }*/
     
     func testCellInSection_getConfiguredWithDoneItem() {
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
