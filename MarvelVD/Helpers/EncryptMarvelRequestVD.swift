@@ -8,7 +8,8 @@
 
 import Foundation
 import CryptoSwift
-
+// Helper to make the encryptation of the keys and generate the needed
+// information to make the requests to the API.
 final class EncryptMarvelRequestVD {
     
     func encryptForRequestData(_ url: String, _ date: Date) -> URL {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for Story data.
 struct MarvelStory: Codable {
     let id: Int
     let title, description: String

@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+// View Conontroller where we show the information of the item selected from TableView to the user.
+// Control if Title or description are empty to prevent empty Label on the view.
 final class MarvelItemDetailViewController: UIViewController {
     
     @IBOutlet weak var idLabel: UILabel!
@@ -19,6 +21,10 @@ final class MarvelItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadViewContent()
+    }
+    
+    func loadViewContent() {
         if let item = marvelItem {
             idLabel.text = "ID: \(item.id)"
             itemImage.setURL(url: NSURL(string: item.imageUrl.absoluteString), placeholderImage: #imageLiteral(resourceName: "emptyImage_3x"))

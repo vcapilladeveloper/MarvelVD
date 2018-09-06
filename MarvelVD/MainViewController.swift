@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Main view from where we can go to each section of the App.
 final class MainViewController: UIViewController {
 
     @IBAction func showItemList(_ sender: UIButton) {

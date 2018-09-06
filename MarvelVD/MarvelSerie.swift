@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for serie data.
 struct MarvelSerie: Codable {
     let id: Int
     let title: String

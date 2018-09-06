@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for Comic data.
 struct MarvelComic: Codable {
     let id: Int
     let title, variantDescription: String

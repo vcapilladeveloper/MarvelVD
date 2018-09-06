@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for creator data.
 struct MarvelCreator: Codable {
     let id: Int
     let firstName, middleName, lastName, fullName: String

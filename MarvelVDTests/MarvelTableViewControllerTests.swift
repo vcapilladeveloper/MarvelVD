@@ -43,5 +43,5 @@ class MarvelTableViewControllerTests: XCTestCase {
     
     func testMarvelTableViewController_dataSorceAndDelegateBeTheSameObject() {
         XCTAssertEqual(sut.tableView.dataSource as? MarvelItemListDataProvider, sut.tableView.delegate as? MarvelItemListDataProvider)
-    }
+    }    
 }

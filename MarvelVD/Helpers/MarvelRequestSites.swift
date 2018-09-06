@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Enum for help to get each API URL depending what we want to get.
 enum MarvelRequestSites: String {
     private var domainUrl : String  { return "https://gateway.marvel.com:443/v1/public/" }
     case characters

@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Manager for interact with a MarvelItem collection,
+// great to use in DataSource and Delegate in UITableView.
 final class MarvelItemManager {
     var marvelItems = [MarvelItem]()
     

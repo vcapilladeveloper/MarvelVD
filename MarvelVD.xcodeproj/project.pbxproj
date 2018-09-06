@@ -16,7 +16,7 @@
 		672DCC13213DA62E00F2E3F7 /* MarvelVDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC12213DA62E00F2E3F7 /* MarvelVDUITests.swift */; };
 		672DCC22213DA69200F2E3F7 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC21213DA69200F2E3F7 /* RequestManager.swift */; };
 		672DCC24213DA6D300F2E3F7 /* RequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC23213DA6D300F2E3F7 /* RequestManagerTests.swift */; };
-		672DCC26213DA74100F2E3F7 /* MarvelVDData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC25213DA74100F2E3F7 /* MarvelVDData.swift */; };
+		672DCC26213DA74100F2E3F7 /* MarvelVDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC25213DA74100F2E3F7 /* MarvelVDApp.swift */; };
 		672DCC28213DA7F100F2E3F7 /* MarvelRequestSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC27213DA7F100F2E3F7 /* MarvelRequestSites.swift */; };
 		672DCC2A213DAB1D00F2E3F7 /* MarvelRequestSitesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC29213DAB1D00F2E3F7 /* MarvelRequestSitesTests.swift */; };
 		672DCC2C213DB1C100F2E3F7 /* EncryptMarvelRequestVD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672DCC2B213DB1C100F2E3F7 /* EncryptMarvelRequestVD.swift */; };
@@ -98,7 +98,7 @@
 		672DCC14213DA62E00F2E3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		672DCC21213DA69200F2E3F7 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		672DCC23213DA6D300F2E3F7 /* RequestManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManagerTests.swift; sourceTree = "<group>"; };
-		672DCC25213DA74100F2E3F7 /* MarvelVDData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelVDData.swift; sourceTree = "<group>"; };
+		672DCC25213DA74100F2E3F7 /* MarvelVDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelVDApp.swift; sourceTree = "<group>"; };
 		672DCC27213DA7F100F2E3F7 /* MarvelRequestSites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestSites.swift; sourceTree = "<group>"; };
 		672DCC29213DAB1D00F2E3F7 /* MarvelRequestSitesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelRequestSitesTests.swift; sourceTree = "<group>"; };
 		672DCC2B213DB1C100F2E3F7 /* EncryptMarvelRequestVD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptMarvelRequestVD.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 				672DCBF9213DA62E00F2E3F7 /* Assets.xcassets */,
 				672DCBFB213DA62E00F2E3F7 /* LaunchScreen.storyboard */,
 				672DCBFE213DA62E00F2E3F7 /* Info.plist */,
-				672DCC25213DA74100F2E3F7 /* MarvelVDData.swift */,
+				672DCC25213DA74100F2E3F7 /* MarvelVDApp.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 			files = (
 				88940EE5213EC12900387B10 /* Thumbnail.swift in Sources */,
 				67D22850214079CF000F0D74 /* MarvelItemDetailViewController.swift in Sources */,
-				672DCC26213DA74100F2E3F7 /* MarvelVDData.swift in Sources */,
+				672DCC26213DA74100F2E3F7 /* MarvelVDApp.swift in Sources */,
 				672DCC22213DA69200F2E3F7 /* RequestManager.swift in Sources */,
 				88AAA2BF213FD31600B6BBC5 /* SwiftNotice.swift in Sources */,
 				672DCC43213DE45100F2E3F7 /* MarvelComic.swift in Sources */,

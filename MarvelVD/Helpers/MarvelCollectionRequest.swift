@@ -8,6 +8,8 @@
 
 import Foundation
 
+// From this class, we can make all request to get the info that we need.
+// TODO: Try to refactor in only one method instead of have 1 method for each API call.
 final class MarvelCollectionRequest {
     typealias getMarvelCollectionResult = (_ data: [MarvelItem]?, _ error: Bool) -> Void
     
@@ -22,6 +24,8 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                } else {
+                    handleResult(nil, true)
                 }
             }
         }
@@ -38,6 +42,8 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                } else {
+                    handleResult(nil, true)
                 }
             }
         }
@@ -54,6 +60,8 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                } else {
+                    handleResult(nil, true)
                 }
             }
         }
@@ -70,6 +78,8 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                }else {
+                    handleResult(nil, true)
                 }
             }
         }
@@ -86,6 +96,8 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                } else {
+                    handleResult(nil, true)
                 }
             }
         }
@@ -102,8 +114,11 @@ final class MarvelCollectionRequest {
                         marvelItems.append(char.returnMarvelItem())
                     }
                     handleResult(marvelItems, error)
+                } else {
+                    handleResult(nil, true)
                 }
             }
         }
     }
+
 }

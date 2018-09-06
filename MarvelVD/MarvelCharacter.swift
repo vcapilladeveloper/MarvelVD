@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for Character data
 struct MarvelCharacter: Codable {
     let id: Int
     let name, description: String

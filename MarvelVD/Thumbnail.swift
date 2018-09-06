@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for thumbnail data.
 struct Thumbnail: Codable {
     let path: String
     let thumbnailExtension: Extension

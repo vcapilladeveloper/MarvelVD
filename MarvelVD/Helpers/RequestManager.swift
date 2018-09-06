@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Manager to make the request to the API.
+// In this project, all requests are GET type.
 final class RequestManager: NSObject {
 
     static var defaultSession: URLSession!

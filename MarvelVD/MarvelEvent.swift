@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Model for event data.
 struct MarvelEvent: Codable {
     let id: Int
     let title, description: String

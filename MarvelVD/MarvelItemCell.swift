@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
+// Cell to show in the TableView from MarvelTableViewController,
+// the information requested from API.
 class MarvelItemCell: UITableViewCell {
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageItem: AsyncImageView!
     
-    
+    // Control if the title comes empty from API to show a default
+    // text instead of label with not text in the view.
     func configCellWithItem(_ item: MarvelItem) {
         idLabel.text = "\(item.id)"
         if item.title.isEmpty {

@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+// This is the dataSource and Delegate for the MarvelTableViewController
+// with a MarvelItemManager who take cares of show and interact
+// with the data requested from API.
 final class MarvelItemListDataProvider: NSObject {
     var marvelItemsManager: MarvelItemManager?
 }

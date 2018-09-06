@@ -8,10 +8,12 @@
 
 import Foundation
 
+// Protocol to implement in Marvel items models for get a MarvelItem reference of it.
 protocol MarvelItemData {
     func returnMarvelItem()->MarvelItem
 }
 
+// Model to use in the list and detail view of selected item
 struct MarvelItem: Equatable {
     
     static func == (lhs: MarvelItem, rhs: MarvelItem ) -> Bool {
