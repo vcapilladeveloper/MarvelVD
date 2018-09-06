@@ -20,19 +20,17 @@ class MarvelItemListDataProviderTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = MarvelItemListDataProvider()
         sut.marvelItemsManager = MarvelItemManager()
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         controller = storyboard.instantiateViewController(withIdentifier: "MarvelTableViewController") as! MarvelTableViewController
-        
         _ = controller.view
-        
         tableView = controller.tableView
         tableView.dataSource = sut
-        
+        tableView.delegate = sut
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut.marvelItemsManager?.removeAllItems()
         super.tearDown()
     }
     
@@ -42,50 +40,80 @@ class MarvelItemListDataProviderTests: XCTestCase {
     }
     
     func testMarvelItemList_sectionRowsAreManageItemsCount() {
-        sut.marvelItemsManager?.addItem(MarvelItem(id: 1, title: "Hi title", description: "Hi description", imageUrl: URL(string: "http://www.github.com")!))
+        sut.marvelItemsManager?.addItem(MarvelItem(id: 1,
+                                                   title: "Hi title",
+                                                   description: "Hi description",
+                                                   imageUrl: URL(string: "http://www.github.com")!))
         
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
         
-        sut.marvelItemsManager?.addItem(MarvelItem(id: 2, title: "Hi second Title", description: "Hi second description", imageUrl: URL(string: "http://www.google.com")!))
+        sut.marvelItemsManager?.addItem(MarvelItem(id: 2,
+                                                   title: "Hi second Title",
+                                                   description: "Hi second description",
+                                                   imageUrl: URL(string: "http://www.google.com")!))
         
         tableView.reloadData()
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 2)
     }
     
     func testCellForRow_ReturnsMarvelItemCell() {
-        sut.marvelItemsManager?.addItem(MarvelItem(id: 0, title: "", description: "", imageUrl: URL(string: "htto://www.gitlab.com")!))
+        sut.marvelItemsManager?.addItem(MarvelItem(id: 0,
+                                                   title: "",
+                                                   description: "",
+                                                   imageUrl: URL(string: "htto://www.gitlab.com")!))
         tableView.reloadData()
         let cell = tableView.cellForRow(at: IndexPath(item: 0, section: 0))
         
         XCTAssertTrue(cell is MarvelItemCell)
     }
     
-    /*func testCellForRow_DequeueCell() {
-        let mockTableView = MockTableView()
+    func testCellForRow_DequeueCell() {
+        let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
         
-        mockTableView.dataSource = sut
-        mockTableView.register(MarvelItemCell.self, forCellReuseIdentifier: "ItemCell")
-        sut.marvelItemsManager?.addItem(MarvelItem(id: 3, title: "", description: "", imageUrl: URL(string: "http://www.linkedin.com")!))
+        sut.marvelItemsManager?.addItem(MarvelItem(id: 3,
+                                                   title: "",
+                                                   description: "",
+                                                   imageUrl: URL(string: "http://www.linkedin.com")!))
         mockTableView.reloadData()
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
         XCTAssertTrue(mockTableView.cellGotDequeued)
-    }*/
+    }
     
     func testCellInSection_getConfiguredWithDoneItem() {
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
         
-        let firstItem = MarvelItem(id: 1, title: "One", description: "First", imageUrl: URL(string: "http://www.appcoda.com")!)
+        let firstItem = MarvelItem(id: 1,
+                                   title: "One",
+                                   description: "First",
+                                   imageUrl: URL(string: "http://www.appcoda.com")!)
         sut.marvelItemsManager?.addItem(firstItem)
-        let secondItem = MarvelItem(id: 2, title: "Two", description: "Second", imageUrl: URL(string: "http://www.raywenderlich.com")!)
+        let secondItem = MarvelItem(id: 2,
+                                    title: "Two",
+                                    description: "Second",
+                                    imageUrl: URL(string: "http://www.raywenderlich.com")!)
         sut.marvelItemsManager?.addItem(secondItem)
         mockTableView.reloadData()
-        
-        
         let cell = mockTableView.cellForRow(at: IndexPath(item: 1, section: 0)) as! MockMarvelItemCell
-        
-        //XCTAssertEqual(mockTableView.numberOfRows(inSection: 0), 2)
-        
         XCTAssertEqual(cell.itemCell, secondItem)
+    }
+    
+    func testCellSelection_sendsNotification() {
+        let item = MarvelItem(id: 1,
+                                   title: "One",
+                                   description: "First",
+                                   imageUrl: URL(string: "http://www.appcoda.com")!)
+        sut.marvelItemsManager?.addItem(item)
+        
+        expectation(forNotification: NSNotification.Name("MarvelItemSelectedNotification"), object: nil, handler: { (notification) -> Bool in
+            guard let marvelItem = notification.userInfo?["index"] as? MarvelItem else { return false }
+            
+            return marvelItem.id == item.id
+            
+        })
+        
+        tableView.delegate?.tableView!(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        
+        waitForExpectations(timeout: 3, handler: nil)
     }
     
 }
