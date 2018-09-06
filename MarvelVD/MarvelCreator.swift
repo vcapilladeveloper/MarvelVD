@@ -13,7 +13,6 @@ struct MarvelCreator: Codable {
     let id: Int
     let firstName, middleName, lastName, fullName: String
     let thumbnail: Thumbnail
-    
     func returnDescription() -> String {
         return firstName + " " + middleName + " " + lastName
     }
@@ -21,6 +20,9 @@ struct MarvelCreator: Codable {
 
 extension MarvelCreator: MarvelItemData {
     func returnMarvelItem() -> MarvelItem {
-        return MarvelItem(id: id, title: fullName, description: returnDescription() , imageUrl: thumbnail.returnUrl())
+        return MarvelItem(id: id,
+                          title: fullName,
+                          description: returnDescription(),
+                          imageUrl: thumbnail.returnUrl())
     }
 }

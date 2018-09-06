@@ -17,6 +17,9 @@ struct MarvelStory: Codable {
 
 extension MarvelStory: MarvelItemData {
     func returnMarvelItem() -> MarvelItem {
-        return MarvelItem(id: id, title: title, description: description, imageUrl: thumbnail != nil ? thumbnail!.returnUrl() : URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!)
+        return MarvelItem(id: id,
+                          title: title,
+                          description: description,
+                          imageUrl: thumbnail != nil ? thumbnail!.returnUrl() : URL(string: "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg")!)
     }
 }

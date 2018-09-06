@@ -30,7 +30,6 @@ class ModelsVDTest: XCTestCase {
             XCTAssertEqual(character.thumbnail.path, "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784")
             XCTAssertEqual(character.thumbnail.thumbnailExtension, Extension.jpg)
             
-            
         } else {
             XCTAssertTrue(false)
         }
@@ -107,17 +106,16 @@ class ModelsVDTest: XCTestCase {
     }
     
     func testModels_charactersError() {
-    
-        if let characters: BaseModel<ResultModel<[MarvelCharacter]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()){
+        
+        if let characters: BaseModel<ResultModel<[MarvelCharacter]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()) {
             XCTAssertNil(characters)
         } else {
             XCTAssertTrue(true)
         }
-        
     }
     
     func testModels_comicError() {
-        if let comics: BaseModel<ResultModel<[MarvelComic]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()){
+        if let comics: BaseModel<ResultModel<[MarvelComic]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()) {
             XCTAssertNil(comics)
         } else {
             XCTAssertTrue(true)
@@ -125,7 +123,7 @@ class ModelsVDTest: XCTestCase {
     }
     
     func testModels_creatorsError() {
-        if let creators: BaseModel<ResultModel<[MarvelCreator]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()){
+        if let creators: BaseModel<ResultModel<[MarvelCreator]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()) {
             XCTAssertNil(creators)
         } else {
             XCTAssertTrue(true)
@@ -141,7 +139,7 @@ class ModelsVDTest: XCTestCase {
     }
     
     func testModels_seriesError() {
-        if let series: BaseModel<ResultModel<[MarvelSerie]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()){
+        if let series: BaseModel<ResultModel<[MarvelSerie]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()) {
             XCTAssertNil(series)
         } else {
             XCTAssertTrue(true)
@@ -149,7 +147,7 @@ class ModelsVDTest: XCTestCase {
     }
     
     func testModels_storiesError() {
-        if let stories: BaseModel<ResultModel<[MarvelStory]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()){
+        if let stories: BaseModel<ResultModel<[MarvelStory]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnErrorJson()) {
             XCTAssertNil(stories)
         } else {
             XCTAssertTrue(true)
@@ -169,7 +167,6 @@ class ModelsVDTest: XCTestCase {
     }
     
     func testModels_comicToMarvelItem() {
-        
         if let comics: BaseModel<ResultModel<[MarvelComic]>> = ModelCodableEngineVD().genericConvert(MarvelModelsTestHelper().returnJSONToData(.comics)) {
             let marvelItem = comics.data.results[0].returnMarvelItem()
             XCTAssertEqual(marvelItem.id, 183)

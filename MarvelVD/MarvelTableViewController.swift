@@ -100,7 +100,7 @@ final class MarvelTableViewController: UIViewController {
     
     // Check if the information recived cam be used like MarvelItem collection.
     private func evaluateInformationRequest(_ data: [MarvelItem]?, _ error: Bool) {
-        DispatchQueue.main.async{
+        DispatchQueue.main.async {
             if !error {
                 self.dataProvider.addItemsToList(data!)
                 self.tableView.reloadData()
@@ -113,14 +113,17 @@ final class MarvelTableViewController: UIViewController {
     
     private func showAlert() {
         self.clearAllNotice()
-        let alert = UIAlertController(title: "Unavailable Data", message: "Is not possible to load data.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Unavailable Data",
+                                      message: "Is not possible to load data.",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
 }
 
 extension MarvelTableViewController: UISearchBarDelegate {
-    // Gets the text from searchBar and make the request when the Search button in keyboard is pressed. If the text is empty, does it an empty search to get all resoults.
+    // Gets the text from searchBar and make the request when the Search button in keyboard is pressed.
+    // If the text is empty, does it an empty search to get all resoults.
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, text != "" {
             getData(text)
@@ -129,4 +132,3 @@ extension MarvelTableViewController: UISearchBarDelegate {
         }
     }
 }
-

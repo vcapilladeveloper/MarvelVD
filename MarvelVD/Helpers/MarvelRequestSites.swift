@@ -10,7 +10,7 @@ import Foundation
 
 // Enum for help to get each API URL depending what we want to get.
 enum MarvelRequestSites: String {
-    private var domainUrl : String  { return "https://gateway.marvel.com:443/v1/public/" }
+    private var domainUrl: String { return "https://gateway.marvel.com:443/v1/public/" }
     case characters
     case comics
     case creators
@@ -26,7 +26,7 @@ enum MarvelRequestSites: String {
         var baseUrl = self.getUrl()
         if let startWithCharacters = startWith {
             switch self {
-            case .characters, .creators,.events:
+            case .characters, .creators, .events:
                 baseUrl += "&nameStartsWith=\(startWithCharacters)"
             case .comics, .series:
                 baseUrl += "&titleStartsWith=\(startWithCharacters)"

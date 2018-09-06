@@ -46,7 +46,6 @@ class MarvelItemListDataProviderTests: XCTestCase {
                                                    imageUrl: URL(string: "http://www.github.com")!))
         
         XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
-        
         sut.marvelItemsManager?.addItem(MarvelItem(id: 2,
                                                    title: "Hi second Title",
                                                    description: "Hi second description",
@@ -69,7 +68,6 @@ class MarvelItemListDataProviderTests: XCTestCase {
     
     func testCellForRow_DequeueCell() {
         let mockTableView = MockTableView.mockTableViewWithDataSource(sut)
-        
         sut.marvelItemsManager?.addItem(MarvelItem(id: 3,
                                                    title: "",
                                                    description: "",
@@ -106,13 +104,10 @@ class MarvelItemListDataProviderTests: XCTestCase {
         
         expectation(forNotification: NSNotification.Name("MarvelItemSelectedNotification"), object: nil, handler: { (notification) -> Bool in
             guard let marvelItem = notification.userInfo?["index"] as? MarvelItem else { return false }
-            
             return marvelItem.id == item.id
-            
         })
         
         tableView.delegate?.tableView!(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
-        
         waitForExpectations(timeout: 3, handler: nil)
     }
     
@@ -121,10 +116,8 @@ class MarvelItemListDataProviderTests: XCTestCase {
 extension MarvelItemListDataProviderTests {
     class MockTableView: UITableView {
         var cellGotDequeued = false
-        
         override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
             cellGotDequeued = true
-            
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         }
         

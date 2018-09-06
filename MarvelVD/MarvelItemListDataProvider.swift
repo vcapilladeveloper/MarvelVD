@@ -33,11 +33,12 @@ extension MarvelItemListDataProvider: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! MarvelItemCell
-
-        cell.configCellWithItem((marvelItemsManager?.marvelItems[indexPath.row])!)
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? MarvelItemCell {
+            cell.configCellWithItem((marvelItemsManager?.marvelItems[indexPath.row])!)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

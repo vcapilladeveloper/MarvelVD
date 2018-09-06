@@ -18,6 +18,9 @@ struct MarvelComic: Codable {
 
 extension MarvelComic: MarvelItemData {
     func returnMarvelItem() -> MarvelItem {
-        return MarvelItem(id: id, title: title, description: description != nil ? description! : variantDescription, imageUrl: thumbnail.returnUrl())
+        return MarvelItem(id: id,
+                          title: title,
+                          description: description != nil ? description! : variantDescription,
+                          imageUrl: thumbnail.returnUrl())
     }
 }

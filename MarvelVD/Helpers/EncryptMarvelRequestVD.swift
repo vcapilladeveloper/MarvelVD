@@ -16,7 +16,7 @@ final class EncryptMarvelRequestVD {
         return URL(string: "\(url)&ts=\(date.timestamp)&apikey=\(publicKey)&hash=\(makeHash(date.timestamp))")!
     }
     
-    private func makeHash(_ timestamp: UInt64) -> String{
+    private func makeHash(_ timestamp: UInt64) -> String {
         return "\(timestamp)\(privateKey)\(publicKey)".md5()
     }
     

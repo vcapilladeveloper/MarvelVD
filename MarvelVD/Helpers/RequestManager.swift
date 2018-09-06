@@ -14,9 +14,9 @@ final class RequestManager: NSObject {
 
     static var defaultSession: URLSession!
     static var dataGetTask: URLSessionDataTask?
-    typealias requestResult = (_ data: Any?, _ error: Bool) -> Void
+    typealias RequestResult = (_ data: Any?, _ error: Bool) -> Void
     
-    class func getResult(_ url: String, completionHandler: @escaping requestResult) {
+    class func getResult(_ url: String, completionHandler: @escaping RequestResult) {
         let encryptUrl = EncryptMarvelRequestVD().encryptForRequestData(url, Date())
         dataGetTask?.cancel()
         defaultSession = URLSession(configuration: .default)
@@ -36,6 +36,5 @@ final class RequestManager: NSObject {
         }
         defer {dataGetTask?.resume()}
     }
-    
     
 }

@@ -11,9 +11,9 @@ import Foundation
 // Class in charge of take result from request and convert in data that whe need.
 // The use of Generic is to specify in each request, the type of data we need to get.
 final class ModelCodableEngineVD {
-    func genericConvert<T: Codable>(_ data: Data) -> T?{
+    func genericConvert<T: Codable>(_ data: Data) -> T? {
         let decoder = JSONDecoder()
-        do{
+        do {
             let genericData = try decoder.decode(T.self, from: data)
             return genericData
         } catch {

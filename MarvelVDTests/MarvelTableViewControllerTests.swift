@@ -26,7 +26,7 @@ class MarvelTableViewControllerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-   
+    
     func testMarvelTableViewController_tableViewIsNotNilAfterViewDidLoad() {
         XCTAssertNotNil(sut.tableView)
     }
@@ -35,7 +35,7 @@ class MarvelTableViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.tableView.dataSource)
         XCTAssertTrue(sut.tableView.dataSource is MarvelItemListDataProvider)
     }
-        
+    
     func testMarvelTableViewController_shouldSetTableViewDelegate() {
         XCTAssertNotNil(sut.tableView.delegate)
         XCTAssertTrue(sut.tableView.delegate is MarvelItemListDataProvider)
@@ -43,5 +43,5 @@ class MarvelTableViewControllerTests: XCTestCase {
     
     func testMarvelTableViewController_dataSorceAndDelegateBeTheSameObject() {
         XCTAssertEqual(sut.tableView.dataSource as? MarvelItemListDataProvider, sut.tableView.delegate as? MarvelItemListDataProvider)
-    }    
+    }
 }

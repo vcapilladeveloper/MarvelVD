@@ -14,7 +14,9 @@ final class MainViewController: UIViewController {
         if let type = MarvelRequestSites.init(rawValue: (sender.titleLabel?.text?.lowercased())!) {
             performSegue(withIdentifier: "goToMarvelItemList", sender: type)
         } else {
-            let alert = UIAlertController(title: "This option is not available", message: "You pressed a button that's not available.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "This option is not available",
+                                          message: "You pressed a button that's not available.",
+                                          preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true)
         }

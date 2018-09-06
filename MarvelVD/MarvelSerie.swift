@@ -18,6 +18,8 @@ struct MarvelSerie: Codable {
 
 extension MarvelSerie: MarvelItemData {
     func returnMarvelItem() -> MarvelItem {
-        return MarvelItem(id: id, title: title, description: description ?? "No description", imageUrl: thumbnail.returnUrl())
+        return MarvelItem(id: id,
+                          title: title,
+                          description: description ?? "No description", imageUrl: thumbnail.returnUrl())
     }
 }

@@ -45,5 +45,4 @@ final class MarvelModelsTestHelper {
             return Data(storiesOK.utf8)
         }
     }
-    
 }
